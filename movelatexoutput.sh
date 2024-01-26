@@ -38,7 +38,7 @@ fi
 
 if compgen -G "$path/*.pdf" > /dev/null; then # check if pdf files exist in directory, https://stackoverflow.com/questions/6363441/check-if-a-file-exists-with-a-wildcard-in-a-shell-script
     for f in $path/*.pdf; do
-        cp "$f" $path/$branchname/
+        cp "$f" $path/$branchname/$branchname.pdf
     done   
     echo "pdf files succesfully copied to $path/$branchname/"
     exit 0
