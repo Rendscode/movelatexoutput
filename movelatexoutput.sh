@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
-# CleanLatexJunk v1.0
-# by Christoph Graumann
-# graumann@cs.tum.edu
+# MoveLatexOutput v1.0
+# by Hans Dürr
+# hans@hansduerr.de
 # Licensed under GPLv3
 
 usage()
@@ -11,7 +11,28 @@ usage()
   exit -1
 }
 
+if [ -d .git ]; then            # check if git Repository exists
+    branchname=$(git branch --show-current)
+else
+    echo "No git repository! Exiting..."
+    exit
+fi
+
+echo $branchname
+
+if [ ! -d $branchname ]; then    # check if directory with $branchname already exists
+    mkdir $branchname
+fi
+
+if compgen -G "./*.pdf" > /dev/null; then # check if pdf files exist in directory, https://stackoverflow.com/questions/6363441/check-if-a-file-exists-with-a-wildcard-in-a-shell-script
+    cp *.pdf $branchname/
+    echo "pdf files succesfully copied"
+fi
+
 path=${!#}
+echo $path
+
+exit
 
 # Require folder name
 if [ -z $path ] || [ ! -d $path ]; then
