@@ -7,7 +7,7 @@
 
 usage()
 {
-  echo "Usage: `basename $0` <inputfolder>"
+  echo "Usage: `basename $0` <outputfolder>"
   exit -1
 }
 
