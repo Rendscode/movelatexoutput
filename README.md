@@ -1,4 +1,5 @@
 Assumed directory structure
+```
 .
 ├── <outputfolder>
 │   ├── <branchname>
@@ -11,7 +12,7 @@ Assumed directory structure
 ├── content.tex
 ├── sample.tex (includes content.tex)
 └── movelatexoutput.sh
-
+```
 
 
 Each document is based on the same latex template ('sample.tex'), which includes a ''content.tex'' file.
