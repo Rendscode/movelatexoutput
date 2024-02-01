@@ -2,8 +2,13 @@ Assumed directory structure
 ```
 .
 ├── <outputfolder>
-│   ├── <branchname>
-│   │   └── <branchname>.pdf
+│   ├── <branchname1>
+│   │   └── <branchname1>.pdf
+|   ├── <branchname2>
+│   │   └── <branchname2>.pdf
+|   ...
+|   ├── <branchname<n>>
+│   │   └── <branchname<n>>.pdf
 │   ├── sample.aux
 │   ├── sample.log
 │   ├── sample.out
