@@ -36,4 +36,4 @@ The git repository lies within the main directory.
 ### Usage:
 `$ ./movelatexoutput <outputfolder>`
 
-The name of the output directory "<outputfolder>" parameter is mandatory.
+The name of the output directory `<outputfolder>` parameter is mandatory.
