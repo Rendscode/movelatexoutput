@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# MoveLatexOutput v1.1
+# MoveLatexOutput v1.3
 # by Hans Dürr
 # hans@hansduerr.de
 # Licensed under GPLv3
