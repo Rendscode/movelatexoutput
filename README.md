@@ -36,4 +36,4 @@ The git repository resides within the main directory.
 ### Usage:
 `$ ./movelatexoutput <filename> <outputfolder>`
 
-The name of the document to be moved `<filename> together with the output directory `<outputfolder>` parameter is mandatory.
+The name of the document to be moved `<filename>` together with the output directory `<outputfolder>` parameter is mandatory.
