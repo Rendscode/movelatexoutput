@@ -1,13 +1,13 @@
 #!/usr/bin/bash
 
-# MoveLatexOutput v1.0
+# MoveLatexOutput v1.1
 # by Hans Dürr
 # hans@hansduerr.de
 # Licensed under GPLv3
 
 usage()
 {
-  echo "Usage: `basename $0` <outputfolder>"
+  echo "Usage: `basename $0` <filename> <outputfolder>"
   exit -1
 }
 
@@ -21,26 +21,31 @@ fi
 # echo $branchname
 
 
-path=${!#}
-# echo $path
+outpath=${!#} # ? letzter Übergabeparameter (laut https://devhints.io/bash ist ! ein pointer)
+#echo $outpath
 
-
-# Require folder name
-if [ -z $path ] || [ ! -d $path ]; then
+# Requires folder name
+if [ -z $outpath ] || [ ! -d $outpath ]; then
+  usage
+  exit 1
+fi
+# Requires filename of document to move as first argument
+files_to_move=$1
+if [ -z $files_to_move ]; then
   usage
   exit 1
 fi
 
-
-if [ ! -d $path/$branchname ]; then    # check if directory with $branchname already exists
-    mkdir $path/$branchname
+if [ ! -d $outpath/$branchname ]; then    # check if directory with $branchname already exists
+    mkdir $outpath/$branchname
 fi
 
-if compgen -G "$path/*.pdf" > /dev/null; then # check if pdf files exist in directory, https://stackoverflow.com/questions/6363441/check-if-a-file-exists-with-a-wildcard-in-a-shell-script
-    for f in $path/*.pdf; do
-        cp "$f" $path/$branchname/$branchname.pdf
-    done   
-    echo "pdf files succesfully copied to $path/$branchname/"
+if compgen -G "*.pdf" > /dev/null; then # check if pdf files exist in directory, https://stackoverflow.com/questions/6363441/check-if-a-file-exists-with-a-wildcard-in-a-shell-script
+#    cp "$f" $outpath/$branchname/$branchname.pdf
+   for f in $files_to_move; do # *.pdf; do
+       cp "$f" $outpath/$branchname/$branchname.pdf
+   done 
+    echo "pdf files succesfully copied to $outpath/$branchname/"
     exit 0
 else
     echo "No pdf files found!"

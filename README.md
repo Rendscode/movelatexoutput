@@ -29,11 +29,11 @@ This requires a git administered bunch of .tex files
 - The content file is changing for each document.
 - Each document and thus each content file is stored in a separate GIT branch.
 
-The git repository lies within the main directory.
+The git repository resides within the main directory.
 
 **The shell script copies the generated PDF to a subdirectory named according to the name of the GIT branch and also renames the PDF file to the branch name.**
 
 ### Usage:
-`$ ./movelatexoutput <outputfolder>`
+`$ ./movelatexoutput <filename> <outputfolder>`
 
-The name of the output directory `<outputfolder>` parameter is mandatory.
+The name of the document to be moved `<filename> together with the output directory `<outputfolder>` parameter is mandatory.
